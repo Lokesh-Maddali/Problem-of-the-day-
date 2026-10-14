@@ -1,0 +1,22 @@
+sentence=input("Enter the sentence:")
+words=sentence.split()
+longest=words[0]
+vowels=0
+palindrome=0
+
+for w in words:
+    if len(w)>len(longest):
+        longest=w
+    
+    low=w.lower()
+    if len(low) >= 2 and low==low[::-1]:
+        palindrome+=1
+
+    for ch in low:
+        if ch in 'aeiou':
+            vowels+=1
+
+print("Words:"+str(len(words)))
+print("Longest word:"+str(longest))
+print("vowels:"+str(vowels))
+print("palindrome:"+str(palindrome))
